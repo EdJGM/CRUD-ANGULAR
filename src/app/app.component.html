@@ -1,8 +1,21 @@
-<h1>{{ title }}</h1>
-<nav>
-  <a class="button" routerLink="/product-list" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Product List</a> |
-  <a class="button" routerLink="/product-add" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Add Product</a>
-  <a class="button" routerLink="/product-edit" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Edit Product</a>
-  <a class="button" routerLink="/product-delete" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Delete Product</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="container mt-4">
+  <h1>{{ title }}</h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product-list" routerLinkActive="active">Product List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product-add" routerLinkActive="active">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product-edit" routerLinkActive="active">Edit Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product-delete" routerLinkActive="active">Delete Product</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

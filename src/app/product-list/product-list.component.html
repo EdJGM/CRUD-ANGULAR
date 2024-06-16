@@ -1,9 +1,13 @@
-<h2>Product List</h2>
-<ul>
-    <li *ngFor="let product of products">
-    {{ product.name }} - ${{ product.price }}
-    <button (click)="editProduct(product.id)">Edit</button>
-    <button (click)="deleteProduct(product.id)">Delete</button>
-    </li>
-</ul>
-<button routerLink="/add">Add Product</button>
+<div class="container mt-4">
+    <h2 class="mb-3">Product List</h2>
+    <ul class="list-group">
+        <li *ngFor="let product of products" class="list-group-item d-flex justify-content-between align-items-center">
+            {{ product.name }} - ${{ product.price }}
+            <div>
+                <button (click)="editProduct(product.id)" class="btn btn-warning btn-sm mr-2">Edit</button>
+                <button (click)="deleteProduct(product.id)" class="btn btn-danger btn-sm">Delete</button>
+            </div>
+        </li>
+    </ul>
+    <button (click)='addProduct()' class="btn btn-success mt-3">Add Product</button>
+</div>

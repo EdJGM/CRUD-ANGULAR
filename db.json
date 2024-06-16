@@ -1,19 +1,19 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Product 1",
-      "price": 100
+      "id": 6,
+      "name": "pantalon",
+      "price": "65"
     },
     {
-      "id": "2",
-      "name": "Product 2",
-      "price": 200
+      "id": 7,
+      "name": "ropa",
+      "price": "100"
     },
     {
-      "id": 0,
-      "name": "Product 3",
-      "price": "300"
+      "id": "1611",
+      "name": "blusa",
+      "price": "10"
     }
   ]
 }

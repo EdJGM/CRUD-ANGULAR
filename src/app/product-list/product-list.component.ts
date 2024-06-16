@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../product.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface Product {
   id: number;
@@ -19,21 +20,25 @@ interface Product {
 })
 
 export class ProductListComponent {
-  
-deleteProduct(arg0: number) {
-throw new Error('Method not implemented.');
-}
-
-editProduct(arg0: number) {
-throw new Error('Method not implemented.');
-}
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
     });
+  }
+
+  addProduct() {
+    this.router.navigate(['/product-add']);
+  }
+
+  deleteProduct(id: number) {
+    this.router.navigate(['/product-delete', id]);
+  }
+
+  editProduct(id: number) {
+    this.router.navigate(['/product-edit', id]);
   }
 }

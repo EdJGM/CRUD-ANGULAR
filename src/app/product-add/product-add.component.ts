@@ -19,11 +19,14 @@ interface Product {
 export class ProductAddComponent {
   product: Product = { id: 0, name: '', price: 0 };
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private productService: ProductService, private router: Router) { }
 
   addProduct(): void {
-    this.productService.addProduct(this.product).subscribe(() => {
-      this.router.navigate(['/']);
+    this.productService.getProducts().subscribe((products: Product[]) => {
+      this.product.id = this.productService.generateId(products);
+      this.productService.addProduct(this.product).subscribe(() => {
+        this.router.navigate(['/']);
+      });
     });
   }
 }
